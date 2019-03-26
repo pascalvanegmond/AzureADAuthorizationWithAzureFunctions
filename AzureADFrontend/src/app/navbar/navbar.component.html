@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/']">Demo Portal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" *ngIf="loggedIn">
+        <a class="nav-link" [routerLink]="['/']">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" *ngIf="loggedIn">
+        <a class="nav-link" [routerLink]="['/products']">Products</a>
+      </li>
+    </ul>
+    <span class="navbar-text dropdown">
+      <!-- loggedIn -->
+      <div *ngIf="loggedIn">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Welcome: {{authService.getUser().displayableId}}
+            </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" (click)="logout()" href="#">Logout</a>
+          </div>
+      </div>
+      <!-- !loggedIn -->
+      <div *ngIf="!loggedIn">
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
+      </div>
+    </span>
+  </div>
+</nav>

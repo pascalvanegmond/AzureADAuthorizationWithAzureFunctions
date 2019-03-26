@@ -44,12 +44,16 @@ namespace Product
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            var products = new List<Item>
+            var products = new Items
             {
-                new Item {name = "item 1", price = 10},
-                new Item {name = "item 2", price = 10},
-                new Item {name = "item 3", price = 10},
+                items = new List<Item>()
+                {
+                    new Item {name = "item 1", price = 10},
+                    new Item {name = "item 2", price = 10},
+                    new Item {name = "item 3", price = 10}
+                }
             };
+
 
             return req.CreateResponse(HttpStatusCode.OK, products);
         }
