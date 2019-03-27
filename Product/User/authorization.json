@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "path_prefix": "/api/info",
+      "policies": { "unauthenticated_action": "AllowAnonymous" }
+    },
+    {
+      "path_prefix": "/api/users",
+      "policies": { "unauthenticated_action": "RejectWith401" }
+    }
+  ]
+}
