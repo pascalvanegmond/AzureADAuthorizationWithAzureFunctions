@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MsalModule } from '@azure/msal-angular';
-import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MsalInterceptorTmp } from './MsalInterceptorTmp';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { HomeComponent } from './page/home/home.component';
 import { ProductComponent } from './page/product/product.component';
+import { UserComponent } from './page/user/user.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ProductComponent } from './page/product/product.component';
     AuthComponent,
     NavbarComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
